@@ -1,17 +1,14 @@
 import React from 'react';
 
 export default function DropDown(props) {
+    // const = props.cars;
+
     return (
         <div id="make">
-            <label for="pet-select">Choose a pet:</label>
+            <label for="make-select">Choose a make:</label>
 
-            <select id="pet-select">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
+            <select id="make-select" onChange={e => props.pickValue(e.target.value)}>
+                {props.cars}
                 <option value="none" selected>--Please choose an option--</option>
             </select>
         </div>
