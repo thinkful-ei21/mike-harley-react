@@ -13,14 +13,20 @@ export default class App extends React.Component {
     }
   }
 
+  getMakes(data) {
+    return data.map(auto => auto.title);
+  }
+
 
   render() {
+
+
     return (
       <div className="App">
+        <Dropdown cars={this.getMakes(this.state.cars)}/>
         <Dropdown />
-        <Dropdown />
-        <Submit />
-        <Output />
+        {/* <Submit />
+        <Output /> */}
       </div>
     );
   }
