@@ -30,7 +30,10 @@ export default class App extends React.Component {
   }
 
   setMake(make) {
-    this.setState({make});
+    this.setState({
+      make,
+      model:''
+    });
   }
 
   setModel(model) {
@@ -43,9 +46,9 @@ export default class App extends React.Component {
 
     return (
       <div className="App">
-        <Dropdown cars={this.getMakes(this.state.cars)} pickValue={value=>this.setMake(value)}/>
-        <Dropdown cars={this.getModels(this.state.make, this.state.cars)} pickValue={value=>this.setModel(value)}/>
-        {/* <Output /> */}
+        <Dropdown cars={this.getMakes(this.state.cars)} pickValue={value=>this.setMake(value)} selectType={'make'}/>
+        <Dropdown cars={this.getModels(this.state.make, this.state.cars)} pickValue={value=>this.setModel(value)} selectType={'model'}/>
+        <Output make={this.state.make} model={this.state.model}/>
       </div>
     );
   }
