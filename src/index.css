@@ -1,5 +1,38 @@
 body {
-  margin: 0;
+  width: 600px;
+  margin: 2% auto;
   padding: 0;
   font-family: sans-serif;
+}
+
+.app {
+  padding: 2% 15% 20%;
+  border: solid 2px black;
+  background-color: rgba(17, 81, 97, 0.479);
+  font-size: 120%;
+  height: fit-content;
+}
+
+h1 {
+  text-align: center;
+}
+
+#make, #model, #output {
+  margin-bottom: 5%;
+
+}
+
+#output {
+  text-align: center;
+}
+
+label {
+  margin: 0, 5%;
+}
+
+#make-select, #model-select {
+  margin-left: 10px;
+  height: 22px;
+  font-size: 15px;
+  padding-bottom: 10px;
 }
