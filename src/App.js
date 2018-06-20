@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './index.css';
 import carModels from './car-models.json';
 import Dropdown from './Dropdown';
 import Output from './Output';
@@ -25,7 +25,6 @@ export default class App extends React.Component {
     } else {
       return '';
     }
-    
   }
 
   setMake(make) {
@@ -44,7 +43,8 @@ export default class App extends React.Component {
 
 
     return (
-      <div className="App">
+      <div className="app">
+      <h1>Find A Car</h1>
         <Dropdown cars={this.getMakes(this.state.cars)} pickValue={value=>this.setMake(value)} selectType={'make'}/>
         <Dropdown cars={this.getModels(this.state.make, this.state.cars)} pickValue={value=>this.setModel(value)} selectType={'model'}/>
         <Output make={this.state.make} model={this.state.model}/>
