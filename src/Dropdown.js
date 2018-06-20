@@ -5,11 +5,11 @@ export default function DropDown(props) {
 
     return (
         <div id={props.selectType}>
-            <label for={`${props.selectType}-select`}>Choose a {props.selectType}:</label>
+            <label htmlFor={`${props.selectType}-select`}>Choose a {props.selectType}:</label>
 
             <select id={`${props.selectType}-select`} onChange={e => props.pickValue(e.target.value)}>
+                <option value="none" defaultValue>--Please choose {props.selectType}--</option>
                 {props.cars}
-                <option value="none" selected>--Please choose {props.selectType}--</option>
             </select>
         </div>
     )

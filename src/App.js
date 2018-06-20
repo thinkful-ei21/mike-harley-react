@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import carModels from './car-models.json';
 import Dropdown from './Dropdown';
-import Submit from './Submit';
 import Output from './Output';
 
 export default class App extends React.Component {
@@ -12,17 +11,17 @@ export default class App extends React.Component {
       cars: carModels,
       make: '',
       model: ''
-    }
+    };
   }
 
   getMakes(data) {
-    return data.map(auto => <option value={`${auto.title}`}>{auto.title}</option>);
+    return data.map(auto => <option value={`${auto.title}`} key={auto.title}>{auto.title}</option>);
   }
 
   getModels(make, data) {
     if (make) {
       const found = data.find(element => element.title === make);
-      return found.models.map(model => <option value={`${model.title}`}>{model.title}</option>);
+      return found.models.map(model => <option value={`${model.title}`} key={model.title} >{model.title}</option>);
     } else {
       return '';
     }
